@@ -1,0 +1,20 @@
+# 字符串及正则表达式
+# 字符串长度，len是字符个数，不是字符的字节数
+str1='人生苦短，我用Python!'
+length=len(str1)
+print(length)
+length2=len(str1.encode())          #默认utf-8编码下的字符串长度,汉字3字节
+length3=len(str1.encode('gbk'))     #gbk编码下的字符串长度，汉字2字节
+print(length2,length3)
+
+substr1=str1[1]
+substr2=str1[5:]   #从第6个字符开始取
+substr3=str1[:5]   #从左边开始取5个字符
+substr4=str1[2:5]  #从第3个开始取到第5个字符
+print('原字符:'+str1)
+print(substr1+'\n'+substr2+'\n'+substr3+'\n'+substr4)
+
+try:
+	substr5=str1[15]
+except IndexError:
+	print('指定的字符索引不存在')
